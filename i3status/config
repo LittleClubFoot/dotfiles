@@ -1,32 +1,29 @@
-general {
-  colors = true
-  color_good = "#a3be8c"
-  color_bad  = "#bf616a"
-  color_degraded = "#ebcb8b"
-  interval = 1
-  separator = "|"
-}
-
 order += "disk /"
 order += "memory"
 order += "cpu_usage"
 order += "wireless wlp3s0"
 order += "battery all"
 order += "volume master"
+order += "tztime local"
 
 disk "/" {
   format = "[ / ] %free"
 }
 
+memory {
+  memory_used_method = classical
+  format="[Mem] %used/%total"
+}
+
 cpu_usage {
-  format = "[CPU] 0: %cpu0 1: %cpu1 2: %cpu2 : %cpu3"
+  format = "[CPU] %usage"
   degraded_threshold = 90
   max_threshold = 95
 }
 
 wireless wlp3s0 {
-  format_up = "[W] %quality, %bitrate (%ip)"
-  format_down  = "[W] disconnected"
+  format_up = "[Wifi] %quality, %bitrate, %ip"
+  format_down  = "[Wifi] disconnected"
 }
 
 battery all {
@@ -37,15 +34,14 @@ battery all {
   low_threshold=10
 }
 
-memory {
-  memory_used_method = classical
-  format="[MEM] %used/%total"
-}
-
 volume master {
   format = "[ ♪ ] %volume"
-  format_muted = "[ ♪ ] muted (%volume)"
+  format_muted = "[ ♪ ] muted:%volume"
   device = "default"
   mixer = "Master"
   mixer_idx = 0
+}
+
+tztime local {
+  format = "[CLK] %Y-%m-%d %H:%M:%S"
 }
