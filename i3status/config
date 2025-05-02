@@ -1,0 +1,51 @@
+general {
+  colors = true
+  color_good = "#a3be8c"
+  color_bad  = "#bf616a"
+  color_degraded = "#ebcb8b"
+  interval = 1
+  separator = "|"
+}
+
+order += "disk /"
+order += "memory"
+order += "cpu_usage"
+order += "wireless wlp3s0"
+order += "battery all"
+order += "volume master"
+
+disk "/" {
+  format = "[ / ] %free"
+}
+
+cpu_usage {
+  format = "[CPU] 0: %cpu0 1: %cpu1 2: %cpu2 : %cpu3"
+  degraded_threshold = 90
+  max_threshold = 95
+}
+
+wireless wlp3s0 {
+  format_up = "[W] %quality, %bitrate (%ip)"
+  format_down  = "[W] disconnected"
+}
+
+battery all {
+  path=/sys/class/power_supply/%d/uevent
+  format = "[BAT] %percentage"
+  last_full_capacity = true
+  threshold_type=percentage
+  low_threshold=10
+}
+
+memory {
+  memory_used_method = classical
+  format="[MEM] %used/%total"
+}
+
+volume master {
+  format = "[ ♪ ] %volume"
+  format_muted = "[ ♪ ] muted (%volume)"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}
