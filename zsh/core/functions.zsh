@@ -1,4 +1,4 @@
-zsh-config () {
+config-zsh () {
   cd $ZSH_DOTFILES
   nvim .
   cd -
