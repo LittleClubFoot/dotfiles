@@ -1,8 +1,10 @@
 if [[ -z "$CONFIG_ZSH" ]]; then
   export CONFIG_ZSH=$HOME/.config/dotfiles/zsh
 fi
-echo CONFIG_ZSH_CORE
-echo CONFIG_ZSH_THEMES
+CONFIG_ZSH_CORE=$CONFIG_ZSH/core
+CONFIG_ZSH_THEMES=$CONFIG_ZSH/themes
+
+# Flag to specific the shell theme
 ZSH_THEME="p10k"
 #ZSH_THEME="starship"
 
