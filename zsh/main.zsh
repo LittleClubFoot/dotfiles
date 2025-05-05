@@ -1,8 +1,8 @@
 if [[ -z "$CONFIG_ZSH" ]]; then
-  export CONFIG_ZSH=$(pwd)
+  export CONFIG_ZSH=$HOME/.config/dotfiles/zsh
 fi
-CONFIG_ZSH_CORE=$CONFIG_ZSH/core
-CONFIG_ZSH_THEMES=$CONFIG_ZSH/themes
+echo CONFIG_ZSH_CORE
+echo CONFIG_ZSH_THEMES
 ZSH_THEME="p10k"
 #ZSH_THEME="starship"
 
