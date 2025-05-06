@@ -22,3 +22,13 @@ alias nvim-i3status="cd-i3status; nvim ."
 alias nvim-kondo="cd-kondo; nvim ."
 
 
+# Shell plugins
+if [ -x "$(command -v colorls)" ]; then
+    alias ls="colorls"
+    alias la="colorls -al"
+fi
+
+if [ -x "$(command -v exa)" ]; then
+    alias ls="exa"
+    alias la="exa --long --all --group"
+fi
