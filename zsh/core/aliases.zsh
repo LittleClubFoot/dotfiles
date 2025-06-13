@@ -12,14 +12,14 @@ alias cd-kondo="cd $WORKSPACES/Kondo"
 
 # Nvim
 ## Configs
-alias nvim-nixos="cd-nixos; nvim ."
-alias nvim-nvim="cd-nvim; nvim ."
-alias nvim-dotfiles="cd-dotfiles; nvim ."
-alias nvim-zsh="cd-zsh; nvim ."
-alias nvim-i3="cd-i3; nvim ."
-alias nvim-i3status="cd-i3status; nvim ."
+alias nvim-nixos="cd-nixos; nvim"
+alias nvim-nvim="cd-nvim; nvim"
+alias nvim-dotfiles="cd-dotfiles; nvim"
+alias nvim-zsh="cd-zsh; nvim"
+alias nvim-i3="cd-i3; nvim"
+alias nvim-i3status="cd-i3status; nvim"
 ## workspaces
-alias nvim-kondo="cd-kondo; nvim ."
+alias nvim-kondo="cd-kondo; nvim"
 
 
 # Shell plugins
